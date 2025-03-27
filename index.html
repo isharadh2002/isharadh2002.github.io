@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Portfolio</title>
+  <!-- Google Fonts for a modern look -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap" rel="stylesheet">
+  <style>
+    /* Reset & Base */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Roboto', sans-serif;
+      line-height: 1.6;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+    /* Header */
+    header {
+      background: #333;
+      color: #fff;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    header .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+    }
+    nav ul li {
+      margin-left: 1.5rem;
+    }
+    nav ul li a:hover {
+      color: #f4f4f4;
+      opacity: 0.8;
+    }
+    /* Hero Section */
+    .hero {
+      background: url('https://via.placeholder.com/1500x800') no-repeat center center/cover;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: #fff;
+      padding: 0 1rem;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+    }
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin-bottom: 2rem;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+    }
+    .hero .btn {
+      background: #ff6f61;
+      padding: 0.75rem 2rem;
+      border: none;
+      border-radius: 50px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .hero .btn:hover {
+      background: #e65a50;
+    }
+    /* About Section */
+    section.about {
+      padding: 4rem 2rem;
+      background: #fff;
+      text-align: center;
+    }
+    section.about h2 {
+      margin-bottom: 1rem;
+      font-size: 2.5rem;
+      color: #333;
+    }
+    section.about p {
+      max-width: 800px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+      color: #666;
+    }
+    /* Portfolio Section */
+    section.portfolio {
+      padding: 4rem 2rem;
+      background: #f4f4f4;
+    }
+    section.portfolio h2 {
+      text-align: center;
+      margin-bottom: 2rem;
+      font-size: 2.5rem;
+      color: #333;
+    }
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+    .portfolio-item {
+      background: #fff;
+      border-radius: 5px;
+      overflow: hidden;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .portfolio-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    }
+    .portfolio-item img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    .portfolio-item .content {
+      padding: 1rem;
+    }
+    .portfolio-item .content h3 {
+      margin-bottom: 0.5rem;
+      font-size: 1.25rem;
+    }
+    .portfolio-item .content p {
+      font-size: 0.9rem;
+      color: #666;
+    }
+    /* Blog/Medium Section */
+    section.blog {
+      padding: 4rem 2rem;
+      background: #fff;
+    }
+    section.blog h2 {
+      text-align: center;
+      margin-bottom: 2rem;
+      font-size: 2.5rem;
+      color: #333;
+    }
+    .blog-posts {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+    .blog-post {
+      background: #f9f9f9;
+      padding: 1.5rem;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+    .blog-post:hover {
+      transform: translateY(-5px);
+    }
+    .blog-post h3 {
+      margin-bottom: 0.5rem;
+      font-size: 1.2rem;
+    }
+    .blog-post p {
+      font-size: 0.9rem;
+      color: #666;
+    }
+    /* Footer */
+    footer {
+      background: #333;
+      color: #fff;
+      text-align: center;
+      padding: 1rem 2rem;
+    }
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+      .hero p {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="logo">MyPortfolio</div>
+    <nav>
+      <ul>
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#portfolio">Projects</a></li>
+        <li><a href="#blog">Blog</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="hero" class="hero">
+    <h1>Welcome to My World</h1>
+    <p>I’m a passionate developer, designer, and writer sharing my journey through creative projects and insightful stories.</p>
+    <button class="btn" onclick="scrollToSection('about')">Learn More</button>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="about">
+    <h2>About Me</h2>
+    <p>Hello! I’m [Your Name], a creative professional with expertise in web development, design, and content creation. I love building digital experiences that blend aesthetics with functionality. Explore my portfolio to see my projects and read my latest thoughts on Medium.</p>
+  </section>
+
+  <!-- Portfolio Section -->
+  <section id="portfolio" class="portfolio">
+    <h2>Projects</h2>
+    <div class="portfolio-grid">
+      <div class="portfolio-item">
+        <img src="https://via.placeholder.com/400x200" alt="Project 1">
+        <div class="content">
+          <h3>Project Title 1</h3>
+          <p>Short description of the project.</p>
+        </div>
+      </div>
+      <div class="portfolio-item">
+        <img src="https://via.placeholder.com/400x200" alt="Project 2">
+        <div class="content">
+          <h3>Project Title 2</h3>
+          <p>Short description of the project.</p>
+        </div>
+      </div>
+      <div class="portfolio-item">
+        <img src="https://via.placeholder.com/400x200" alt="Project 3">
+        <div class="content">
+          <h3>Project Title 3</h3>
+          <p>Short description of the project.</p>
+        </div>
+      </div>
+      <!-- Add more portfolio items as needed -->
+    </div>
+  </section>
+
+  <!-- Blog Section -->
+  <section id="blog" class="blog">
+    <h2>Latest From Medium</h2>
+    <div class="blog-posts" id="medium-posts">
+      <!-- Medium posts will be injected here -->
+      <p style="text-align:center; width:100%;">Loading posts...</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 [Your Name]. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    // Smooth scroll to sections
+    function scrollToSection(id) {
+      document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // Fetch latest Medium posts using an RSS-to-JSON API
+    // Replace 'YOUR_MEDIUM_USERNAME' with your Medium username.
+    (function() {
+      const mediumUsername = 'YOUR_MEDIUM_USERNAME';
+      const feedUrl = `https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@${mediumUsername}`;
+      
+      fetch(feedUrl)
+        .then(response => response.json())
+        .then(data => {
+          const postsContainer = document.getElementById('medium-posts');
+          postsContainer.innerHTML = ''; // Clear loading text
+
+          if(data && data.items) {
+            // Limit to 3 posts
+            data.items.slice(0, 3).forEach(post => {
+              const postDiv = document.createElement('div');
+              postDiv.className = 'blog-post';
+              postDiv.innerHTML = `
+                <h3><a href="${post.link}" target="_blank">${post.title}</a></h3>
+                <p>${post.description.replace(/<[^>]*>?/gm, '').substring(0, 120)}...</p>
+              `;
+              postsContainer.appendChild(postDiv);
+            });
+          } else {
+            postsContainer.innerHTML = '<p>No posts found.</p>';
+          }
+        })
+        .catch(error => {
+          console.error('Error fetching Medium posts:', error);
+          document.getElementById('medium-posts').innerHTML = '<p>Error loading posts.</p>';
+        });
+    })();
+  </script>
+</body>
+</html>
