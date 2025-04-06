@@ -1,313 +1,772 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Your Portfolio</title>
-  <!-- Google Fonts for a modern look -->
-  <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap" rel="stylesheet">
-  <style>
-    /* Reset & Base */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    body {
-      font-family: 'Roboto', sans-serif;
-      line-height: 1.6;
-      background-color: #f4f4f4;
-      color: #333;
-    }
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-    img {
-      max-width: 100%;
-      height: auto;
-    }
-    /* Header */
-    header {
-      background: #333;
-      color: #fff;
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-    header .logo {
-      font-size: 1.5rem;
-      font-weight: 700;
-    }
-    nav ul {
-      list-style: none;
-      display: flex;
-    }
-    nav ul li {
-      margin-left: 1.5rem;
-    }
-    nav ul li a:hover {
-      color: #f4f4f4;
-      opacity: 0.8;
-    }
-    /* Hero Section */
-    .hero {
-      background: url('https://via.placeholder.com/1500x800') no-repeat center center/cover;
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      color: #fff;
-      padding: 0 1rem;
-    }
-    .hero h1 {
-      font-size: 3rem;
-      margin-bottom: 1rem;
-      text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
-    }
-    .hero p {
-      font-size: 1.2rem;
-      max-width: 600px;
-      margin-bottom: 2rem;
-      text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
-    }
-    .hero .btn {
-      background: #ff6f61;
-      padding: 0.75rem 2rem;
-      border: none;
-      border-radius: 50px;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-    .hero .btn:hover {
-      background: #e65a50;
-    }
-    /* About Section */
-    section.about {
-      padding: 4rem 2rem;
-      background: #fff;
-      text-align: center;
-    }
-    section.about h2 {
-      margin-bottom: 1rem;
-      font-size: 2.5rem;
-      color: #333;
-    }
-    section.about p {
-      max-width: 800px;
-      margin: 0 auto;
-      font-size: 1.1rem;
-      color: #666;
-    }
-    /* Portfolio Section */
-    section.portfolio {
-      padding: 4rem 2rem;
-      background: #f4f4f4;
-    }
-    section.portfolio h2 {
-      text-align: center;
-      margin-bottom: 2rem;
-      font-size: 2.5rem;
-      color: #333;
-    }
-    .portfolio-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
-    }
-    .portfolio-item {
-      background: #fff;
-      border-radius: 5px;
-      overflow: hidden;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-    .portfolio-item:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-    }
-    .portfolio-item img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-    }
-    .portfolio-item .content {
-      padding: 1rem;
-    }
-    .portfolio-item .content h3 {
-      margin-bottom: 0.5rem;
-      font-size: 1.25rem;
-    }
-    .portfolio-item .content p {
-      font-size: 0.9rem;
-      color: #666;
-    }
-    /* Blog/Medium Section */
-    section.blog {
-      padding: 4rem 2rem;
-      background: #fff;
-    }
-    section.blog h2 {
-      text-align: center;
-      margin-bottom: 2rem;
-      font-size: 2.5rem;
-      color: #333;
-    }
-    .blog-posts {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-    }
-    .blog-post {
-      background: #f9f9f9;
-      padding: 1.5rem;
-      border-radius: 5px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      transition: transform 0.3s;
-    }
-    .blog-post:hover {
-      transform: translateY(-5px);
-    }
-    .blog-post h3 {
-      margin-bottom: 0.5rem;
-      font-size: 1.2rem;
-    }
-    .blog-post p {
-      font-size: 0.9rem;
-      color: #666;
-    }
-    /* Footer */
-    footer {
-      background: #333;
-      color: #fff;
-      text-align: center;
-      padding: 1rem 2rem;
-    }
-    @media (max-width: 768px) {
-      .hero h1 {
-        font-size: 2.5rem;
-      }
-      .hero p {
-        font-size: 1rem;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Ishara Dhanushan</title>
+    <link rel="stylesheet" href="./css/output.css">
+    <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"> -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
 </head>
 <body>
-  <!-- Header -->
-  <header>
-    <div class="logo">MyPortfolio</div>
-    <nav>
-      <ul>
-        <li><a href="#hero">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#portfolio">Projects</a></li>
-        <li><a href="#blog">Blog</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <!-- Hero Section -->
-  <section id="hero" class="hero">
-    <h1>Welcome to My World</h1>
-    <p>I’m a passionate developer, designer, and writer sharing my journey through creative projects and insightful stories.</p>
-    <button class="btn" onclick="scrollToSection('about')">Learn More</button>
-  </section>
-
-  <!-- About Section -->
-  <section id="about" class="about">
-    <h2>About Me</h2>
-    <p>Hello! I'm Ishara Dhanushan, a creative professional with expertise in web development, design, and content creation. I love building digital experiences that blend aesthetics with functionality. Explore my portfolio to see my projects and read my latest thoughts on Medium.</p>
-  </section>
-
-  <!-- Portfolio Section -->
-  <section id="portfolio" class="portfolio">
-    <h2>Projects</h2>
-    <div class="portfolio-grid">
-      <div class="portfolio-item">
-        <img src="https://via.placeholder.com/400x200" alt="Project 1">
-        <div class="content">
-          <h3>Project Title 1</h3>
-          <p>Short description of the project.</p>
+<!-- Header component with elevated look -->
+<header class="sticky top-0 z-50 bg-gradient-to-r from-blue-800 to-blue-500 text-white shadow-lg">
+    <div class="container mx-auto px-4 py-6">
+        <div class="flex justify-between items-center">
+            <!-- Logo/Name -->
+            <div class="text-xl font-bold">Ishara Dhanushan</div>
+            <!-- Desktop menu -->
+            <nav class="hidden md:flex space-x-8">
+                <a href="#home" class="hover:text-blue-300 transition-colors duration-300 font-medium">Home</a>
+                <a href="#about" class="hover:text-blue-300 transition-colors duration-300 font-medium">About</a>
+                <a href="#projects" class="hover:text-blue-300 transition-colors duration-300 font-medium">Projects</a>
+                <a href="#skills" class="hover:text-blue-300 transition-colors duration-300 font-medium">Skills</a>
+                <a href="#contact" class="hover:text-blue-300 transition-colors duration-300 font-medium">Contact</a>
+            </nav>
+            <!-- Mobile menu button -->
+            <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                     xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
         </div>
-      </div>
-      <div class="portfolio-item">
-        <img src="https://via.placeholder.com/400x200" alt="Project 2">
-        <div class="content">
-          <h3>Project Title 2</h3>
-          <p>Short description of the project.</p>
-        </div>
-      </div>
-      <div class="portfolio-item">
-        <img src="https://via.placeholder.com/400x200" alt="Project 3">
-        <div class="content">
-          <h3>Project Title 3</h3>
-          <p>Short description of the project.</p>
-        </div>
-      </div>
-      <!-- Add more portfolio items as needed -->
     </div>
-  </section>
 
-  <!-- Blog Section -->
-  <section id="blog" class="blog">
-    <h2>Latest From Medium</h2>
-    <div class="blog-posts" id="medium-posts">
-      <!-- Medium posts will be injected here -->
-      <p style="text-align:center; width:100%;">Loading posts...</p>
+    <!-- Mobile menu (absolutely positioned below the header) -->
+    <div id="mobile-menu"
+         class="absolute left-0 top-full w-full bg-gradient-to-r from-blue-800 to-blue-500 text-white shadow-lg transition-all duration-300 transform -translate-y-4 opacity-0 pointer-events-none z-50">
+        <div class="flex flex-col space-y-3 p-4">
+            <a href="#home" class="hover:text-blue-300 transition-colors duration-300 font-medium">Home</a>
+            <a href="#about" class="hover:text-blue-300 transition-colors duration-300 font-medium">About</a>
+            <a href="#projects" class="hover:text-blue-300 transition-colors duration-300 font-medium">Projects</a>
+            <a href="#skills" class="hover:text-blue-300 transition-colors duration-300 font-medium">Skills</a>
+            <a href="#contact" class="hover:text-blue-300 transition-colors duration-300 font-medium">Contact</a>
+        </div>
     </div>
-  </section>
+</header>
 
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 Ishara Dhanushan. All Rights Reserved.</p>
-  </footer>
+<!-- JavaScript for smooth mobile menu toggle -->
+<script>
+    // Ensure the script runs after the DOM is fully loaded
+    document.addEventListener('DOMContentLoaded', function () {
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
 
-  <script>
-    // Smooth scroll to sections
-    function scrollToSection(id) {
-      document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
-    }
-
-    // Fetch latest Medium posts using an RSS-to-JSON API
-    // Replace 'YOUR_MEDIUM_USERNAME' with your Medium username.
-    (function() {
-      const mediumUsername = 'isharadh2002';
-      const feedUrl = `https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@${mediumUsername}`;
-      
-      fetch(feedUrl)
-        .then(response => response.json())
-        .then(data => {
-          const postsContainer = document.getElementById('medium-posts');
-          postsContainer.innerHTML = ''; // Clear loading text
-
-          if(data && data.items) {
-            // Limit to 3 posts
-            data.items.slice(0, 3).forEach(post => {
-              const postDiv = document.createElement('div');
-              postDiv.className = 'blog-post';
-              postDiv.innerHTML = `
-                <h3><a href="${post.link}" target="_blank">${post.title}</a></h3>
-                <p>${post.description.replace(/<[^>]*>?/gm, '').substring(0, 120)}...</p>
-              `;
-              postsContainer.appendChild(postDiv);
+        if (mobileMenuButton && mobileMenu) {
+            mobileMenuButton.addEventListener('click', function () {
+                // Toggle the menu visibility classes
+                mobileMenu.classList.toggle('opacity-0');
+                mobileMenu.classList.toggle('-translate-y-4');
+                mobileMenu.classList.toggle('pointer-events-none');
+                mobileMenu.classList.toggle('translate-y-0');
+                mobileMenu.classList.toggle('opacity-100');
             });
-          } else {
-            postsContainer.innerHTML = '<p>No posts found.</p>';
-          }
-        })
-        .catch(error => {
-          console.error('Error fetching Medium posts:', error);
-          document.getElementById('medium-posts').innerHTML = '<p>Error loading posts.</p>';
+        } else {
+            console.error('Mobile menu elements not found');
+        }
+    });
+</script>
+
+<!-- Hero Section -->
+<section id="home" class="bg-gradient-to-r from-blue-200 to-blue-100 text-black relative py-16 md:py-24">
+    <div class="absolute inset-0 z-0 opacity-20">
+        <!-- <img src="/api/placeholder/1600/800" alt="Background Pattern" class="w-full h-full object-cover"/> -->
+    </div>
+
+    <div class="container mx-auto px-10 relative z-10">
+        <div class="grid grid-cols-1 md:grid-cols-2 items-center gap-12">
+            <!-- Text Content -->
+            <div class="flex flex-col space-y-6">
+                <h1 class="text-4xl md:text-5xl font-bold">
+                    Hello there 👋
+                </h1>
+
+                <h1 class="text-4xl md:text-5xl font-bold">
+                    I'm <span class="text-blue-600">Ishara Dhanushan</span>
+                </h1>
+
+                <p class="text-xl text-gray-500">
+                    Turning ideas into digital reality
+                </p>
+
+                <p class="text-gray-600 max-w-md">
+                    Experienced full-stack developer with a passion for creating elegant, user-centered web
+                    applications. Specializing in modern frameworks and responsive design to deliver seamless digital
+                    experiences.
+                </p>
+
+                <div class="flex flex-wrap gap-4">
+                    <a href="#projects"
+                       class="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition duration-300 flex items-center">
+                        View My Projects
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20"
+                             fill="currentColor">
+                            <path fill-rule="evenodd"
+                                  d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
+                                  clip-rule="evenodd"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Profile Image -->
+            <div class="flex justify-center md:justify-end">
+                <div class="relative">
+                    <div class="w-96 h-96 rounded-full overflow-hidden border-4 border-blue-400 shadow-lg transform transition duration-500 hover:scale-105">
+                        <img src="./assets/WhatsApp%20Image%202025-03-27%20at%207.17.43%20PM.jpeg" alt="Profile Picture"
+                             class="w-full h-full object-cover transform scale-150 object-center"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            });
         });
-    })();
-  </script>
+    </script>
+</section>
+
+<!-- Modern About Me Section -->
+<section id="about" class="py-16 bg-gradient-to-b from-gray-50 to-white">
+    <div class="container mx-auto px-6">
+        <h2 class="text-4xl font-extrabold text-center text-gray-800 mb-12">About Me</h2>
+        <div class="max-w-7xl mx-auto grid gap-10 bg-white shadow-xl rounded-3xl p-10">
+
+            <!-- Professional Background -->
+            <div class="flex gap-4 items-start">
+                <div class="text-indigo-500 text-3xl">
+                    <i class="fas fa-briefcase"></i>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-semibold mb-2 text-gray-700">Professional Background</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        I'm a passionate web developer with over 5 years of experience building responsive,
+                        user-friendly web applications. I've collaborated with cross-functional teams at both startups
+                        and established companies to deliver solutions that combine technical excellence with intuitive
+                        user experiences.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Education -->
+            <div class="flex gap-4 items-start">
+                <div class="text-indigo-500 text-3xl">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-semibold mb-2 text-gray-700">Education</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        I am a Bachelor of Science (Hons) Undergraduate in Software Engineering from University of
+                        Kelaniya, I am currently specialized in Web Application Development and Mobile Application
+                        Development. I've supplemented my education with certifications, online courses, and community
+                        participation.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Professional Journey -->
+            <div class="flex gap-4 items-start">
+                <div class="text-indigo-500 text-3xl">
+                    <i class="fas fa-code-branch"></i>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-semibold mb-2 text-gray-700">Professional Journey</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        I started as a junior developer at [Company Name], developing strong fundamentals in HTML, CSS,
+                        and JavaScript. Over time, I adopted modern frameworks and methodologies, leading development
+                        teams and architecting complex systems.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Goals -->
+            <div class="flex gap-4 items-start">
+                <div class="text-indigo-500 text-3xl">
+                    <i class="fas fa-bullseye"></i>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-semibold mb-2 text-gray-700">Goals</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        I aim to deepen my expertise in emerging technologies and software architecture. My mission is
+                        to build applications that are not only functional but also delightful and impactful for users.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Personal Interests -->
+            <div class="flex gap-4 items-start">
+                <div class="text-indigo-500 text-3xl">
+                    <i class="fas fa-heart"></i>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-semibold mb-2 text-gray-700">Personal Interests</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Outside of work, I attend tech meetups, explore new frameworks, contribute to open source, and
+                        enjoy podcasts and blogs about web development. Personal projects help me stay creative and
+                        curious.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section id="technologies" class="py-16 bg-gradient-to-r from-blue-300 to-blue-100 text-white">
+    <div class="container mx-auto text-center">
+        <h2 class="text-4xl font-bold mb-10 text-black">Technologies & Skills</h2>
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-8 max-w-7xl px-10 mx-auto">
+            <!-- HTML -->
+            <div class="tech-item bg-blue-400 hover:bg-blue-600 p-6 rounded-xl transition">
+                <img src="https://www.w3.org/html/logo/downloads/HTML5_Logo_512.png" alt="HTML" class="mx-auto mb-4 h-16">
+                <h3 class="text-xl font-semibold">HTML</h3>
+            </div>
+            <!-- CSS -->
+            <div class="tech-item bg-blue-400 hover:bg-blue-600 p-6 rounded-xl transition">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/62/CSS3_logo.svg" alt="CSS" class="mx-auto mb-4 h-16">
+                <h3 class="text-xl font-semibold">CSS</h3>
+            </div>
+            <!-- JavaScript -->
+            <div class="tech-item bg-blue-400 hover:bg-blue-600 p-6 rounded-xl transition">
+                <img src="https://www.w3schools.com/whatis/img_js.png" alt="JavaScript" class="mx-auto mb-4 h-16">
+                <h3 class="text-xl font-semibold">JavaScript</h3>
+            </div>
+            <!-- PHP -->
+            <div class="tech-item bg-blue-400 hover:bg-blue-600 p-6 rounded-xl transition">
+                <img src="https://www.php.net/images/logos/new-php-logo.svg" alt="PHP" class="mx-auto mb-4 h-16">
+                <h3 class="text-xl font-semibold">PHP</h3>
+            </div>
+            <!-- TailwindCSS -->
+            <div class="tech-item bg-blue-400 hover:bg-blue-600 p-6 rounded-xl transition">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Tailwind_CSS_Logo.svg/1200px-Tailwind_CSS_Logo.svg.png" alt="TailwindCSS" class="mx-auto mb-4 h-16">
+                <h3 class="text-xl font-semibold">TailwindCSS</h3>
+            </div>
+            <!-- Vite -->
+            <div class="tech-item bg-blue-400 hover:bg-blue-600 p-6 rounded-xl transition">
+                <img src="https://vitejs.dev/logo.svg" alt="Vite" class="mx-auto mb-4 h-16">
+                <h3 class="text-xl font-semibold">Vite</h3>
+            </div>
+            <!-- React -->
+            <div class="tech-item bg-blue-400 hover:bg-blue-600 p-6 rounded-xl transition">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" alt="React" class="mx-auto mb-4 h-16">
+                <h3 class="text-xl font-semibold">React</h3>
+            </div>
+            <!-- Express -->
+            <div class="tech-item bg-blue-400 hover:bg-blue-600 p-6 rounded-xl transition">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/64/Expressjs.png" alt="Express" class="mx-auto mb-4 h-16">
+                <h3 class="text-xl font-semibold">Express</h3>
+            </div>
+            <!-- Flutter -->
+            <div class="tech-item bg-blue-400 hover:bg-blue-600 p-6 rounded-xl transition">
+                <img src="https://static-00.iconduck.com/assets.00/flutter-original-icon-414x512-j8mz4eu9.png" alt="Flutter" class="mx-auto mb-4 h-16">
+                <h3 class="text-xl font-semibold">Flutter</h3>
+            </div>
+            <!-- Kotlin -->
+            <div class="tech-item bg-blue-400 hover:bg-blue-600 p-6 rounded-xl transition">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/7/74/Kotlin_Icon.png" alt="Kotlin" class="mx-auto mb-4 h-16">
+                <h3 class="text-xl font-semibold">Kotlin</h3>
+            </div>
+            <!-- Java -->
+            <div class="tech-item bg-blue-400 hover:bg-blue-600 p-6 rounded-xl transition">
+                <img src="https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/181_Java_logo_logos-512.png" alt="Java" class="mx-auto mb-4 h-16">
+                <h3 class="text-xl font-semibold">Java</h3>
+            </div>
+            <!-- Spring Boot -->
+            <div class="tech-item bg-blue-400 hover:bg-blue-600 p-6 rounded-xl transition">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Spring_Boot.svg/1200px-Spring_Boot.svg.png" alt="Spring Boot" class="mx-auto mb-4 h-16">
+                <h3 class="text-xl font-semibold">Spring Boot</h3>
+            </div>
+            <!-- SQL -->
+            <div class="tech-item bg-blue-400 hover:bg-blue-600 p-6 rounded-xl transition">
+                <img src="https://img.icons8.com/?size=512&id=9nLaR5KFGjN0&format=png" alt="SQL" class="mx-auto mb-4 h-16">
+                <h3 class="text-xl font-semibold">SQL</h3>
+            </div>
+            <!-- MongoDB -->
+            <div class="tech-item bg-blue-400 hover:bg-blue-600 p-6 rounded-xl transition">
+                <img src="https://www.svgrepo.com/show/331488/mongodb.svg" alt="MongoDB" class="mx-auto mb-4 h-16">
+                <h3 class="text-xl font-semibold">MongoDB</h3>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    document.querySelectorAll('.tech-item').forEach(item => {
+        item.addEventListener('mouseover', () => {
+            item.classList.add('scale-110');
+        });
+        item.addEventListener('mouseleave', () => {
+            item.classList.remove('scale-110');
+        });
+    });
+</script>
+
+
+
+
+
+<!-- Claude generated very advanced about me section -->
+<section id="about-me2" class="py-20 bg-black text-white">
+    <div class="container mx-auto px-4">
+        <!-- Animated heading with creative styling -->
+        <div class="mb-16 relative">
+            <h2 class="text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 inline-block">
+                About Me</h2>
+            <div class="absolute -bottom-4 left-0 h-1 w-24 bg-gradient-to-r from-purple-400 to-pink-500"></div>
+        </div>
+
+        <!-- Modern cards layout -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Professional Background Card -->
+            <div class="bg-gray-900 rounded-2xl p-6 border border-gray-800 hover:border-purple-500 transition-all duration-300 transform hover:-translate-y-2">
+                <div class="text-purple-400 mb-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24"
+                         stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                              d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
+                    </svg>
+                </div>
+                <h3 class="text-2xl font-bold mb-4 text-white">Professional Background</h3>
+                <p class="text-gray-400 leading-relaxed">
+                    I'm a passionate web developer with over 5 years of experience building responsive, user-friendly
+                    web applications. I've collaborated with cross-functional teams at both startups and established
+                    companies to deliver solutions that combine technical excellence with intuitive user experiences.
+                </p>
+            </div>
+
+            <!-- Education Card -->
+            <div class="bg-gray-900 rounded-2xl p-6 border border-gray-800 hover:border-pink-500 transition-all duration-300 transform hover:-translate-y-2">
+                <div class="text-pink-400 mb-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24"
+                         stroke="currentColor">
+                        <path d="M12 14l9-5-9-5-9 5 9 5z"/>
+                        <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                              d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/>
+                    </svg>
+                </div>
+                <h3 class="text-2xl font-bold mb-4 text-white">Education</h3>
+                <p class="text-gray-400 leading-relaxed">
+                    I hold a Bachelor's degree in Computer Science from [University Name], where I specialized in web
+                    technologies and software engineering. I've supplemented my formal education with continuous
+                    learning through professional certifications and online courses.
+                </p>
+            </div>
+
+            <!-- Professional Journey Card -->
+            <div class="bg-gray-900 rounded-2xl p-6 border border-gray-800 hover:border-red-500 transition-all duration-300 transform hover:-translate-y-2">
+                <div class="text-red-400 mb-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24"
+                         stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                              d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                    </svg>
+                </div>
+                <h3 class="text-2xl font-bold mb-4 text-white">Professional Journey</h3>
+                <p class="text-gray-400 leading-relaxed">
+                    My journey began as a junior developer at [Company Name], where I developed strong fundamentals in
+                    HTML, CSS, and JavaScript. As I progressed, I embraced modern frameworks and methodologies,
+                    eventually leading development teams and architecting complex applications.
+                </p>
+            </div>
+
+            <!-- Goals Card -->
+            <div class="relative bg-gradient-to-br from-purple-900 to-indigo-900 rounded-2xl p-6 border border-purple-700 transform hover:-translate-y-2 transition-all duration-300 md:col-span-2 lg:col-span-1">
+                <div class="absolute top-0 right-0 -mt-4 -mr-4 bg-purple-500 rounded-full p-2 shadow-lg">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                         stroke="white">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                              d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                    </svg>
+                </div>
+                <h3 class="text-2xl font-bold mb-4 text-white">Goals</h3>
+                <p class="text-gray-300 leading-relaxed">
+                    I'm constantly working to expand my expertise in emerging technologies while deepening my
+                    understanding of software architecture principles. My goal is to create web applications that not
+                    only function flawlessly but also delight users with their design and usability.
+                </p>
+                <div class="mt-6 flex flex-wrap gap-2">
+                    <span class="px-3 py-1 bg-purple-800 bg-opacity-50 rounded-full text-sm text-purple-200">UX Design</span>
+                    <span class="px-3 py-1 bg-purple-800 bg-opacity-50 rounded-full text-sm text-purple-200">Architecture</span>
+                    <span class="px-3 py-1 bg-purple-800 bg-opacity-50 rounded-full text-sm text-purple-200">New Technologies</span>
+                </div>
+            </div>
+
+            <!-- Personal Interests Card -->
+            <div class="relative bg-gradient-to-br from-pink-900 to-red-900 rounded-2xl p-6 border border-pink-700 transform hover:-translate-y-2 transition-all duration-300 md:col-span-2 lg:col-span-2">
+                <div class="absolute top-0 right-0 -mt-4 -mr-4 bg-pink-500 rounded-full p-2 shadow-lg">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                         stroke="white">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                              d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                    </svg>
+                </div>
+                <h3 class="text-2xl font-bold mb-4 text-white">Personal Interests</h3>
+                <p class="text-gray-300 leading-relaxed">
+                    When I'm not coding, I enjoy attending tech meetups and hackathons to connect with like-minded
+                    professionals. I'm an avid follower of web development blogs and podcasts, and I occasionally
+                    contribute to open-source projects.
+                </p>
+                <div class="mt-6 grid grid-cols-3 gap-4">
+                    <div class="bg-black bg-opacity-30 p-3 rounded-lg text-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mx-auto text-pink-400" fill="none"
+                             viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                  d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+                        </svg>
+                        <p class="mt-2 text-pink-200">Meetups</p>
+                    </div>
+                    <div class="bg-black bg-opacity-30 p-3 rounded-lg text-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mx-auto text-pink-400" fill="none"
+                             viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                  d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+                        </svg>
+                        <p class="mt-2 text-pink-200">Hackathons</p>
+                    </div>
+                    <div class="bg-black bg-opacity-30 p-3 rounded-lg text-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mx-auto text-pink-400" fill="none"
+                             viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                  d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
+                        </svg>
+                        <p class="mt-2 text-pink-200">Open Source</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tech stack section -->
+        <div class="mt-16">
+            <h3 class="text-xl font-medium mb-6 text-gray-400">My Tech Stack</h3>
+            <div class="flex flex-wrap gap-4">
+                <div class="px-4 py-2 bg-gray-800 rounded-full text-gray-300 flex items-center">
+                    <span class="h-3 w-3 rounded-full bg-blue-400 mr-2"></span>
+                    React
+                </div>
+                <div class="px-4 py-2 bg-gray-800 rounded-full text-gray-300 flex items-center">
+                    <span class="h-3 w-3 rounded-full bg-green-400 mr-2"></span>
+                    Node.js
+                </div>
+                <div class="px-4 py-2 bg-gray-800 rounded-full text-gray-300 flex items-center">
+                    <span class="h-3 w-3 rounded-full bg-purple-400 mr-2"></span>
+                    Tailwind CSS
+                </div>
+                <div class="px-4 py-2 bg-gray-800 rounded-full text-gray-300 flex items-center">
+                    <span class="h-3 w-3 rounded-full bg-yellow-400 mr-2"></span>
+                    JavaScript
+                </div>
+                <div class="px-4 py-2 bg-gray-800 rounded-full text-gray-300 flex items-center">
+                    <span class="h-3 w-3 rounded-full bg-red-400 mr-2"></span>
+                    TypeScript
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact CTA -->
+        <div class="mt-16 text-center">
+            <a href="#contact"
+               class="inline-block px-8 py-4 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full text-white font-medium hover:from-purple-600 hover:to-pink-600 transform hover:-translate-y-1 transition-all duration-300">Let's
+                Connect</a>
+        </div>
+    </div>
+</section>
+
+<!-- Technologies Section - Improved Stylish Version -->
+<section id="skills" class="py-16 bg-gradient-to-br from-gray-900 to-gray-800 text-white">
+    <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold mb-12 text-center">Technologies & Skills</h2>
+
+        <!-- Category Tabs -->
+        <div class="flex justify-center mb-10">
+            <div class="inline-flex rounded-md shadow-sm" role="group">
+                <button type="button"
+                        class="tab-btn active px-5 py-2.5 bg-blue-600 text-white font-medium rounded-l-lg hover:bg-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                        onclick="showCategory('frontend')">
+                    Frontend
+                </button>
+                <button type="button"
+                        class="tab-btn px-5 py-2.5 bg-gray-700 text-white font-medium hover:bg-gray-600 focus:z-10 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                        onclick="showCategory('backend')">
+                    Backend
+                </button>
+                <button type="button"
+                        class="tab-btn px-5 py-2.5 bg-gray-700 text-white font-medium rounded-r-lg hover:bg-gray-600 focus:z-10 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                        onclick="showCategory('tools')">
+                    Tools & Methods
+                </button>
+            </div>
+        </div>
+
+        <div class="max-w-5xl mx-auto">
+            <!-- Frontend Skills -->
+            <div id="frontend-skills" class="skill-category active">
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                    <div class="skill-card group">
+                        <div class="bg-gray-800 bg-opacity-70 p-6 rounded-xl transform transition-all duration-300 group-hover:scale-105 group-hover:shadow-lg group-hover:bg-blue-900 group-hover:bg-opacity-40 backdrop-blur-sm border border-gray-700 group-hover:border-blue-500">
+                            <div class="text-blue-400 group-hover:text-blue-300 mb-4 flex justify-center">
+                                <span class="tech-icon text-3xl">&#60;/&#62;</span>
+                            </div>
+                            <h4 class="font-semibold text-center text-lg mb-2">HTML5/CSS3</h4>
+                            <div class="w-full bg-gray-700 rounded-full h-1.5 mb-1">
+                                <div class="bg-blue-500 h-1.5 rounded-full" style="width: 95%"></div>
+                            </div>
+                            <p class="text-xs text-gray-300 text-center">95%</p>
+                        </div>
+                    </div>
+
+                    <div class="skill-card group">
+                        <div class="bg-gray-800 bg-opacity-70 p-6 rounded-xl transform transition-all duration-300 group-hover:scale-105 group-hover:shadow-lg group-hover:bg-yellow-900 group-hover:bg-opacity-40 backdrop-blur-sm border border-gray-700 group-hover:border-yellow-500">
+                            <div class="text-yellow-400 group-hover:text-yellow-300 mb-4 flex justify-center">
+                                <span class="tech-icon text-3xl">JS</span>
+                            </div>
+                            <h4 class="font-semibold text-center text-lg mb-2">JavaScript (ES6+)</h4>
+                            <div class="w-full bg-gray-700 rounded-full h-1.5 mb-1">
+                                <div class="bg-yellow-500 h-1.5 rounded-full" style="width: 90%"></div>
+                            </div>
+                            <p class="text-xs text-gray-300 text-center">90%</p>
+                        </div>
+                    </div>
+
+                    <div class="skill-card group">
+                        <div class="bg-gray-800 bg-opacity-70 p-6 rounded-xl transform transition-all duration-300 group-hover:scale-105 group-hover:shadow-lg group-hover:bg-blue-900 group-hover:bg-opacity-40 backdrop-blur-sm border border-gray-700 group-hover:border-blue-400">
+                            <div class="text-blue-400 group-hover:text-blue-300 mb-4 flex justify-center">
+                                <span class="tech-icon text-3xl">⚛️</span>
+                            </div>
+                            <h4 class="font-semibold text-center text-lg mb-2">React</h4>
+                            <div class="w-full bg-gray-700 rounded-full h-1.5 mb-1">
+                                <div class="bg-blue-400 h-1.5 rounded-full" style="width: 88%"></div>
+                            </div>
+                            <p class="text-xs text-gray-300 text-center">88%</p>
+                        </div>
+                    </div>
+
+                    <div class="skill-card group">
+                        <div class="bg-gray-800 bg-opacity-70 p-6 rounded-xl transform transition-all duration-300 group-hover:scale-105 group-hover:shadow-lg group-hover:bg-teal-900 group-hover:bg-opacity-40 backdrop-blur-sm border border-gray-700 group-hover:border-teal-500">
+                            <div class="text-teal-400 group-hover:text-teal-300 mb-4 flex justify-center">
+                                <span class="tech-icon text-3xl">🌬️</span>
+                            </div>
+                            <h4 class="font-semibold text-center text-lg mb-2">Tailwind CSS</h4>
+                            <div class="w-full bg-gray-700 rounded-full h-1.5 mb-1">
+                                <div class="bg-teal-500 h-1.5 rounded-full" style="width: 92%"></div>
+                            </div>
+                            <p class="text-xs text-gray-300 text-center">92%</p>
+                        </div>
+                    </div>
+
+                    <div class="skill-card group">
+                        <div class="bg-gray-800 bg-opacity-70 p-6 rounded-xl transform transition-all duration-300 group-hover:scale-105 group-hover:shadow-lg group-hover:bg-green-900 group-hover:bg-opacity-40 backdrop-blur-sm border border-gray-700 group-hover:border-green-500">
+                            <div class="text-green-400 group-hover:text-green-300 mb-4 flex justify-center">
+                                <span class="tech-icon text-3xl">🔺</span>
+                            </div>
+                            <h4 class="font-semibold text-center text-lg mb-2">Vue.js</h4>
+                            <div class="w-full bg-gray-700 rounded-full h-1.5 mb-1">
+                                <div class="bg-green-500 h-1.5 rounded-full" style="width: 80%"></div>
+                            </div>
+                            <p class="text-xs text-gray-300 text-center">80%</p>
+                        </div>
+                    </div>
+
+                    <div class="skill-card group">
+                        <div class="bg-gray-800 bg-opacity-70 p-6 rounded-xl transform transition-all duration-300 group-hover:scale-105 group-hover:shadow-lg group-hover:bg-purple-900 group-hover:bg-opacity-40 backdrop-blur-sm border border-gray-700 group-hover:border-purple-500">
+                            <div class="text-purple-400 group-hover:text-purple-300 mb-4 flex justify-center">
+                                <span class="tech-icon text-3xl">TS</span>
+                            </div>
+                            <h4 class="font-semibold text-center text-lg mb-2">TypeScript</h4>
+                            <div class="w-full bg-gray-700 rounded-full h-1.5 mb-1">
+                                <div class="bg-purple-500 h-1.5 rounded-full" style="width: 85%"></div>
+                            </div>
+                            <p class="text-xs text-gray-300 text-center">85%</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Backend Skills -->
+            <div id="backend-skills" class="skill-category hidden">
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                    <div class="skill-card group">
+                        <div class="bg-gray-800 bg-opacity-70 p-6 rounded-xl transform transition-all duration-300 group-hover:scale-105 group-hover:shadow-lg group-hover:bg-green-900 group-hover:bg-opacity-40 backdrop-blur-sm border border-gray-700 group-hover:border-green-500">
+                            <div class="text-green-400 group-hover:text-green-300 mb-4 flex justify-center">
+                                <span class="tech-icon text-3xl">🟢</span>
+                            </div>
+                            <h4 class="font-semibold text-center text-lg mb-2">Node.js</h4>
+                            <div class="w-full bg-gray-700 rounded-full h-1.5 mb-1">
+                                <div class="bg-green-500 h-1.5 rounded-full" style="width: 85%"></div>
+                            </div>
+                            <p class="text-xs text-gray-300 text-center">85%</p>
+                        </div>
+                    </div>
+
+                    <div class="skill-card group">
+                        <div class="bg-gray-800 bg-opacity-70 p-6 rounded-xl transform transition-all duration-300 group-hover:scale-105 group-hover:shadow-lg group-hover:bg-red-900 group-hover:bg-opacity-40 backdrop-blur-sm border border-gray-700 group-hover:border-red-500">
+                            <div class="text-red-400 group-hover:text-red-300 mb-4 flex justify-center">
+                                <span class="tech-icon text-3xl">🚂</span>
+                            </div>
+                            <h4 class="font-semibold text-center text-lg mb-2">Express.js</h4>
+                            <div class="w-full bg-gray-700 rounded-full h-1.5 mb-1">
+                                <div class="bg-red-500 h-1.5 rounded-full" style="width: 82%"></div>
+                            </div>
+                            <p class="text-xs text-gray-300 text-center">82%</p>
+                        </div>
+                    </div>
+
+                    <div class="skill-card group">
+                        <div class="bg-gray-800 bg-opacity-70 p-6 rounded-xl transform transition-all duration-300 group-hover:scale-105 group-hover:shadow-lg group-hover:bg-blue-900 group-hover:bg-opacity-40 backdrop-blur-sm border border-gray-700 group-hover:border-blue-500">
+                            <div class="text-blue-400 group-hover:text-blue-300 mb-4 flex justify-center">
+                                <span class="tech-icon text-3xl">🐍</span>
+                            </div>
+                            <h4 class="font-semibold text-center text-lg mb-2">Python</h4>
+                            <div class="w-full bg-gray-700 rounded-full h-1.5 mb-1">
+                                <div class="bg-blue-500 h-1.5 rounded-full" style="width: 75%"></div>
+                            </div>
+                            <p class="text-xs text-gray-300 text-center">75%</p>
+                        </div>
+                    </div>
+
+                    <div class="skill-card group">
+                        <div class="bg-gray-800 bg-opacity-70 p-6 rounded-xl transform transition-all duration-300 group-hover:scale-105 group-hover:shadow-lg group-hover:bg-purple-900 group-hover:bg-opacity-40 backdrop-blur-sm border border-gray-700 group-hover:border-purple-500">
+                            <div class="text-purple-400 group-hover:text-purple-300 mb-4 flex justify-center">
+                                <span class="tech-icon text-3xl">🗄️</span>
+                            </div>
+                            <h4 class="font-semibold text-center text-lg mb-2">SQL/NoSQL</h4>
+                            <div class="w-full bg-gray-700 rounded-full h-1.5 mb-1">
+                                <div class="bg-purple-500 h-1.5 rounded-full" style="width: 80%"></div>
+                            </div>
+                            <p class="text-xs text-gray-300 text-center">80%</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tools & Methods Skills -->
+            <div id="tools-skills" class="skill-category hidden">
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                    <div class="skill-card group">
+                        <div class="bg-gray-800 bg-opacity-70 p-6 rounded-xl transform transition-all duration-300 group-hover:scale-105 group-hover:shadow-lg group-hover:bg-orange-900 group-hover:bg-opacity-40 backdrop-blur-sm border border-gray-700 group-hover:border-orange-500">
+                            <div class="text-orange-400 group-hover:text-orange-300 mb-4 flex justify-center">
+                                <span class="tech-icon text-3xl">🔀</span>
+                            </div>
+                            <h4 class="font-semibold text-center text-lg mb-2">Git/GitHub</h4>
+                            <div class="w-full bg-gray-700 rounded-full h-1.5 mb-1">
+                                <div class="bg-orange-500 h-1.5 rounded-full" style="width: 90%"></div>
+                            </div>
+                            <p class="text-xs text-gray-300 text-center">90%</p>
+                        </div>
+                    </div>
+
+                    <div class="skill-card group">
+                        <div class="bg-gray-800 bg-opacity-70 p-6 rounded-xl transform transition-all duration-300 group-hover:scale-105 group-hover:shadow-lg group-hover:bg-blue-900 group-hover:bg-opacity-40 backdrop-blur-sm border border-gray-700 group-hover:border-blue-500">
+                            <div class="text-blue-400 group-hover:text-blue-300 mb-4 flex justify-center">
+                                <span class="tech-icon text-3xl">🐳</span>
+                            </div>
+                            <h4 class="font-semibold text-center text-lg mb-2">Docker</h4>
+                            <div class="w-full bg-gray-700 rounded-full h-1.5 mb-1">
+                                <div class="bg-blue-500 h-1.5 rounded-full" style="width: 78%"></div>
+                            </div>
+                            <p class="text-xs text-gray-300 text-center">78%</p>
+                        </div>
+                    </div>
+
+                    <div class="skill-card group">
+                        <div class="bg-gray-800 bg-opacity-70 p-6 rounded-xl transform transition-all duration-300 group-hover:scale-105 group-hover:shadow-lg group-hover:bg-indigo-900 group-hover:bg-opacity-40 backdrop-blur-sm border border-gray-700 group-hover:border-indigo-500">
+                            <div class="text-indigo-400 group-hover:text-indigo-300 mb-4 flex justify-center">
+                                <span class="tech-icon text-3xl">🔄</span>
+                            </div>
+                            <h4 class="font-semibold text-center text-lg mb-2">CI/CD</h4>
+                            <div class="w-full bg-gray-700 rounded-full h-1.5 mb-1">
+                                <div class="bg-indigo-500 h-1.5 rounded-full" style="width: 75%"></div>
+                            </div>
+                            <p class="text-xs text-gray-300 text-center">75%</p>
+                        </div>
+                    </div>
+
+                    <div class="skill-card group">
+                        <div class="bg-gray-800 bg-opacity-70 p-6 rounded-xl transform transition-all duration-300 group-hover:scale-105 group-hover:shadow-lg group-hover:bg-teal-900 group-hover:bg-opacity-40 backdrop-blur-sm border border-gray-700 group-hover:border-teal-500">
+                            <div class="text-teal-400 group-hover:text-teal-300 mb-4 flex justify-center">
+                                <span class="tech-icon text-3xl">📱</span>
+                            </div>
+                            <h4 class="font-semibold text-center text-lg mb-2">Responsive Design</h4>
+                            <div class="w-full bg-gray-700 rounded-full h-1.5 mb-1">
+                                <div class="bg-teal-500 h-1.5 rounded-full" style="width: 95%"></div>
+                            </div>
+                            <p class="text-xs text-gray-300 text-center">95%</p>
+                        </div>
+                    </div>
+
+                    <div class="skill-card group">
+                        <div class="bg-gray-800 bg-opacity-70 p-6 rounded-xl transform transition-all duration-300 group-hover:scale-105 group-hover:shadow-lg group-hover:bg-pink-900 group-hover:bg-opacity-40 backdrop-blur-sm border border-gray-700 group-hover:border-pink-500">
+                            <div class="text-pink-400 group-hover:text-pink-300 mb-4 flex justify-center">
+                                <span class="tech-icon text-3xl">🧪</span>
+                            </div>
+                            <h4 class="font-semibold text-center text-lg mb-2">Testing</h4>
+                            <div class="w-full bg-gray-700 rounded-full h-1.5 mb-1">
+                                <div class="bg-pink-500 h-1.5 rounded-full" style="width: 82%"></div>
+                            </div>
+                            <p class="text-xs text-gray-300 text-center">82%</p>
+                        </div>
+                    </div>
+
+                    <div class="skill-card group">
+                        <div class="bg-gray-800 bg-opacity-70 p-6 rounded-xl transform transition-all duration-300 group-hover:scale-105 group-hover:shadow-lg group-hover:bg-purple-900 group-hover:bg-opacity-40 backdrop-blur-sm border border-gray-700 group-hover:border-purple-500">
+                            <div class="text-purple-400 group-hover:text-purple-300 mb-4 flex justify-center">
+                                <span class="tech-icon text-3xl">🔌</span>
+                            </div>
+                            <h4 class="font-semibold text-center text-lg mb-2">RESTful APIs</h4>
+                            <div class="w-full bg-gray-700 rounded-full h-1.5 mb-1">
+                                <div class="bg-purple-500 h-1.5 rounded-full" style="width: 88%"></div>
+                            </div>
+                            <p class="text-xs text-gray-300 text-center">88%</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript for tab functionality -->
+    <script>
+        function showCategory(category) {
+            // Hide all categories
+            document.querySelectorAll('.skill-category').forEach(el => {
+                el.classList.add('hidden');
+            });
+
+            // Show selected category
+            document.getElementById(category + '-skills').classList.remove('hidden');
+
+            // Update active tab styling
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('active');
+                btn.classList.remove('bg-blue-600');
+                btn.classList.add('bg-gray-700');
+            });
+
+            // Set clicked button as active
+            event.target.classList.add('active');
+            event.target.classList.remove('bg-gray-700');
+            event.target.classList.add('bg-blue-600');
+        }
+    </script>
+</section>
+
 </body>
 </html>
